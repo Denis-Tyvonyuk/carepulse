@@ -47,7 +47,7 @@ const PatientForm = () => {
     try {
       const userData = { name, email, phone };
       const user = await createUser(userData);
-      if (user) router.push(`/patients/${user.id}/register`);
+      if (user) router.push(`/patients/${user.$id}/register`);
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +57,8 @@ const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="md-12 space-y-4">
-          <h1 className="header"></h1>
+          <h1 className="header">Hi #</h1>
+          <p className="text-dark-700">Let us know more about yourself.</p>
         </section>
         <CustomFormField
           control={form.control}
