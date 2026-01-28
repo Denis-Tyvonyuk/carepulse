@@ -111,7 +111,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                   {GenderOptions.map((option) => (
                     <div className="radio-group" key={option}>
                       <RadioGroupItem value={option} id={option} />
-                      <Label htmlFor={option} className="pointer">
+                      <Label htmlFor={option} className="cursor-pointer">
                         {option}
                       </Label>
                     </div>
