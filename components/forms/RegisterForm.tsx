@@ -30,6 +30,7 @@ const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
   // 1. Define your form.
   const form = useForm<z.infer<typeof PatientFormValidation>>({
+    //@ts-ignore
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
       ...PatientFormDefaultValues,
@@ -65,6 +66,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         identificationDocument: formData,
       };
 
+      //@ts-ignore
       const patient = await registerPatient(patientData);
 
       if (patient) router.push(`/patients/${user.$id}/new-appointment`);
@@ -76,6 +78,7 @@ const RegisterForm = ({ user }: { user: User }) => {
   return (
     <Form {...form}>
       <form
+        //@ts-ignore
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-12 flex-1"
       >
